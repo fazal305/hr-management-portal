@@ -1,0 +1,14 @@
+.department-form-grid { display: grid; grid-template-columns: 1fr 1fr 2fr auto; gap: .85rem; align-items: end; }
+.department-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
+.department-card { padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+.department-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
+.department-name { margin: 0; font-size: 1.05rem; font-weight: 850; }
+.department-desc { min-height: 42px; margin: .4rem 0 0; color: var(--muted); font-size: .9rem; }
+.department-stats { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .65rem; margin-top: .9rem; }
+.department-stat { padding: .75rem; border: 1px solid rgba(154,171,199,.14); border-radius: 14px; background: rgba(255,255,255,.035); }
+.department-stat span { display: block; color: var(--muted); font-size: .78rem; font-weight: 800; }
+.department-stat strong { display: block; margin-top: .2rem; font-family: var(--mono); }
+.department-actions { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .85rem; }
+.manager-pill { display: inline-flex; margin-top: .7rem; padding: .38rem .6rem; border: 1px solid var(--border); border-radius: 999px; color: var(--cyan); font-size: .82rem; font-weight: 800; }
+@media (max-width:1180px){.department-form-grid,.department-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.department-form-grid .description-field{grid-column:span 2;}}
+@media (max-width:700px){.department-form-grid,.department-grid,.department-stats{grid-template-columns:1fr;}.department-form-grid .description-field{grid-column:span 1;}}

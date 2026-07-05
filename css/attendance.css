@@ -1,0 +1,9 @@
+.attendance-form-grid { display: grid; grid-template-columns: 1.3fr repeat(3,minmax(0,1fr)) 1.4fr auto; gap: .85rem; align-items: end; }
+.attendance-summary { margin-bottom: 1rem; }
+.attendance-badge { min-width: 78px; text-align: center; }
+.status-present { background: var(--green-soft); color: var(--green); }
+.status-absent { background: rgba(251,113,133,.14); color: var(--red); }
+.status-late { background: rgba(250,204,21,.14); color: var(--yellow); }
+.status-remote { background: var(--cyan-soft); color: var(--cyan); }
+@media (max-width:1180px){.attendance-form-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media (max-width:700px){.attendance-form-grid{grid-template-columns:1fr;}}

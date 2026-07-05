@@ -1,0 +1,12 @@
+.payroll-summary { margin-bottom: 1rem; }
+.payroll-controls { display: flex; flex-wrap: wrap; gap: .75rem; align-items: end; justify-content: space-between; margin-bottom: 1rem; }
+.payroll-filter { width: min(320px,100%); }
+.payroll-table input { min-width: 110px; }
+.net-pay { color: var(--green); font-family: var(--mono); font-weight: 900; }
+.deduction-text { color: var(--red); font-family: var(--mono); }
+.bonus-text { color: var(--cyan); font-family: var(--mono); }
+.payroll-employee { display: grid; gap: .1rem; }
+.payroll-employee strong { font-weight: 850; }
+.payroll-employee span { color: var(--muted); font-size: .82rem; }
+.payroll-note { min-width: 180px; }
+@media (max-width:760px){.payroll-controls{display:grid;grid-template-columns:1fr;}.payroll-filter{width:100%;}}

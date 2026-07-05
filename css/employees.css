@@ -1,0 +1,12 @@
+.employee-form-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .85rem; }
+.employee-form-grid .span-2 { grid-column: span 2; }
+.employee-card-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .85rem; }
+.employee-mini-card { padding: 1rem; border: 1px solid rgba(154,171,199,.14); border-radius: var(--radius); background: var(--card); }
+.employee-avatar { display: grid; width: 46px; height: 46px; margin-bottom: .75rem; place-items: center; border-radius: 16px; background: linear-gradient(135deg,var(--cyan-soft),var(--purple-soft)); color: var(--cyan); font-weight: 900; }
+.employee-name { margin: 0; font-weight: 850; }
+.employee-role { margin: .2rem 0 0; color: var(--muted); font-size: .88rem; }
+.employee-meta, .employee-actions { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .75rem; }
+.employee-actions { justify-content: flex-end; margin-top: 0; }
+.salary-text { color: var(--green); font-family: var(--mono); font-weight: 800; }
+@media (max-width:1180px){.employee-form-grid,.employee-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.employee-form-grid .span-2{grid-column:span 1;}}
+@media (max-width:640px){.employee-form-grid,.employee-card-grid{grid-template-columns:1fr;}.employee-actions{justify-content:flex-start;}}
