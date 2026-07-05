@@ -1,13 +1,76 @@
-.leave-form-grid { display: grid; grid-template-columns: 1.4fr repeat(3,minmax(0,1fr)) 1.6fr auto; gap: .85rem; align-items: end; }
-.leave-board { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
-.leave-column { min-height: 260px; padding: .9rem; border: 1px solid rgba(154,171,199,.14); border-radius: var(--radius); background: rgba(255,255,255,.035); }
-.leave-column-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: .85rem; }
-.leave-column-title h3 { margin: 0; font-size: .98rem; font-weight: 850; }
-.leave-card { padding: .9rem; border: 1px solid rgba(154,171,199,.14); border-radius: 14px; background: var(--card); }
-.leave-card + .leave-card { margin-top: .75rem; }
-.leave-card-title { margin: 0; font-weight: 850; }
-.leave-card-meta { margin: .2rem 0 0; color: var(--muted); font-size: .86rem; }
-.leave-card-actions { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
-.leave-days { color: var(--cyan); font-family: var(--mono); font-weight: 850; }
-@media (max-width:1180px){.leave-form-grid,.leave-board{grid-template-columns:repeat(2,minmax(0,1fr));}.leave-board .leave-column:last-child{grid-column:span 2;}}
-@media (max-width:760px){.leave-form-grid,.leave-board{grid-template-columns:1fr;}.leave-board .leave-column:last-child{grid-column:span 1;}}
+.leave-form-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)) 1.6fr auto;
+  gap: 0.85rem;
+  align-items: end;
+}
+.leave-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.leave-column {
+  min-height: 260px;
+  padding: 0.9rem;
+  border: 1px solid rgba(154, 171, 199, 0.14);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.035);
+}
+.leave-column-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+.leave-column-title h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 850;
+}
+.leave-card {
+  padding: 0.9rem;
+  border: 1px solid rgba(154, 171, 199, 0.14);
+  border-radius: 14px;
+  background: var(--card);
+}
+.leave-card + .leave-card {
+  margin-top: 0.75rem;
+}
+.leave-card-title {
+  margin: 0;
+  font-weight: 850;
+}
+.leave-card-meta {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+.leave-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+.leave-days {
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-weight: 850;
+}
+@media (max-width: 1180px) {
+  .leave-form-grid,
+  .leave-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .leave-board .leave-column:last-child {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 760px) {
+  .leave-form-grid,
+  .leave-board {
+    grid-template-columns: 1fr;
+  }
+  .leave-board .leave-column:last-child {
+    grid-column: span 1;
+  }
+}

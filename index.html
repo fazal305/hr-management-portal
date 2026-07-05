@@ -1,1 +1,100 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dashboard | HR Management Portal</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="styles.css" rel="stylesheet"><link href="css/dashboard.css" rel="stylesheet"></head><body><div class="hr-app"><div id="sidebarMount"></div><main class="main-shell"><header class="topbar"><div><p class="page-kicker">HR Command Center</p><h1 class="page-title">Dashboard</h1><p class="page-subtitle">Track workforce health, attendance, leave volume, department spread, and payroll exposure from one local workspace.</p></div><button class="btn btn-outline-info mobile-nav-toggle" id="mobileNavToggle" type="button">Menu</button></header><section class="content"><div id="statusMessage" class="status-message"></div><div class="hr-grid grid-4 mb-3" id="dashboardStats"></div><div class="dashboard-layout"><div class="hr-grid"><section class="chart-panel"><div class="panel-header"><div><h2 class="panel-title">Attendance Pulse</h2><p class="panel-note">Today versus recent attendance mix.</p></div></div><canvas id="attendanceChart"></canvas></section><section class="chart-panel"><div class="panel-header"><div><h2 class="panel-title">Department Distribution</h2><p class="panel-note">Employees grouped by department.</p></div></div><canvas id="departmentChart"></canvas></section></div><aside class="hr-grid"><section class="panel"><div class="panel-header"><div><h2 class="panel-title">Quick Actions</h2><p class="panel-note">Jump into common HR workflows.</p></div></div><div class="quick-actions-grid" id="quickActions"></div></section><section class="panel"><div class="panel-header"><div><h2 class="panel-title">Workspace Health</h2><p class="panel-note">Local data summary.</p></div></div><div class="dashboard-health" id="workspaceHealth"></div></section><section class="panel"><div class="panel-header"><div><h2 class="panel-title">Recent HR Activity</h2><p class="panel-note">Latest workspace events.</p></div></div><div id="recentActivity"></div></section></aside></div></section></main></div><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script src="js/shared.js"></script><script src="js/dashboard.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard | HR Management Portal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <link href="css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="hr-app">
+      <div id="sidebarMount"></div>
+      <main class="main-shell">
+        <header class="topbar">
+          <div>
+            <p class="page-kicker">HR Command Center</p>
+            <h1 class="page-title">Dashboard</h1>
+            <p class="page-subtitle">
+              Track workforce health, attendance, leave volume, department
+              spread, and payroll exposure from one local workspace.
+            </p>
+          </div>
+          <button
+            class="btn btn-outline-info mobile-nav-toggle"
+            id="mobileNavToggle"
+            type="button"
+          >
+            Menu
+          </button>
+        </header>
+        <section class="content">
+          <div id="statusMessage" class="status-message"></div>
+          <div class="hr-grid grid-4 mb-3" id="dashboardStats"></div>
+          <div class="dashboard-layout">
+            <div class="hr-grid">
+              <section class="chart-panel">
+                <div class="panel-header">
+                  <div>
+                    <h2 class="panel-title">Attendance Pulse</h2>
+                    <p class="panel-note">
+                      Today versus recent attendance mix.
+                    </p>
+                  </div>
+                </div>
+                <canvas id="attendanceChart"></canvas>
+              </section>
+              <section class="chart-panel">
+                <div class="panel-header">
+                  <div>
+                    <h2 class="panel-title">Department Distribution</h2>
+                    <p class="panel-note">Employees grouped by department.</p>
+                  </div>
+                </div>
+                <canvas id="departmentChart"></canvas>
+              </section>
+            </div>
+            <aside class="hr-grid">
+              <section class="panel">
+                <div class="panel-header">
+                  <div>
+                    <h2 class="panel-title">Quick Actions</h2>
+                    <p class="panel-note">Jump into common HR workflows.</p>
+                  </div>
+                </div>
+                <div class="quick-actions-grid" id="quickActions"></div>
+              </section>
+              <section class="panel">
+                <div class="panel-header">
+                  <div>
+                    <h2 class="panel-title">Workspace Health</h2>
+                    <p class="panel-note">Local data summary.</p>
+                  </div>
+                </div>
+                <div class="dashboard-health" id="workspaceHealth"></div>
+              </section>
+              <section class="panel">
+                <div class="panel-header">
+                  <div>
+                    <h2 class="panel-title">Recent HR Activity</h2>
+                    <p class="panel-note">Latest workspace events.</p>
+                  </div>
+                </div>
+                <div id="recentActivity"></div>
+              </section>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
