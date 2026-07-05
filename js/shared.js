@@ -47,5 +47,24 @@ function downloadJson(filename, data) { const blob = new Blob([JSON.stringify(da
 function copyText(text, message = "Copied to clipboard.") { if (!navigator.clipboard) { showStatus("Clipboard API is not available in this browser.", "warning"); return; } navigator.clipboard.writeText(text).then(() => showStatus(message, "success")).catch(() => showStatus("Unable to copy text.", "danger")); }
 function applyThemeSettings() { const raw = localStorage.getItem(HR_STORAGE_KEY); if (!raw) return; try { const w = JSON.parse(raw); document.body.classList.toggle("light-mode", !w.settings?.darkMode); document.body.classList.toggle("compact-sidebar", Boolean(w.settings?.compactSidebar)); } catch (error) { console.error("Unable to apply theme settings.", error); } }
 function slugify(text) { return String(text || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
-function initShell(active) { $("#sidebarMount").html(renderSidebar(active)); setActiveNav(); applyThemeSettings(); }
-$(document).ready(function () { loadWorkspace(); applyThemeSettings(); $(document).on("click", "#mobileNavToggle", () => $("body").toggleClass("sidebar-open")); $(document).on("click", ".sidebar-link", () => $("body").removeClass("sidebar-open")); });
+function ensurePageLoader() {
+    if ($("#pageLoader").length) return;
+    $("body").append(`<div class="page-loader" id="pageLoader" aria-hidden="true"><div class="loader-card"><div class="loader-ring"></div><p class="loader-text">Loading workspace</p></div></div>`);
+}
+function isInternalPageLink(link) {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) return false;
+    const url = new URL(href, window.location.href);
+    return url.origin === window.location.origin && url.pathname.endsWith(".html");
+}
+function navigateWithLoader(event) {
+    const link = event.currentTarget;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === "_blank" || !isInternalPageLink(link)) return;
+    event.preventDefault();
+    $("body").removeClass("sidebar-open").addClass("page-leaving page-loading");
+    window.setTimeout(() => {
+        window.location.href = link.href;
+    }, 260);
+}
+function initShell(active) { $("#sidebarMount").html(renderSidebar(active)); ensurePageLoader(); setActiveNav(); applyThemeSettings(); window.requestAnimationFrame(() => $("body").addClass("page-ready")); }
+$(document).ready(function () { loadWorkspace(); ensurePageLoader(); applyThemeSettings(); $(document).on("click", "#mobileNavToggle", () => $("body").toggleClass("sidebar-open")); $(document).on("click", ".sidebar-link, .action-card", navigateWithLoader); });
