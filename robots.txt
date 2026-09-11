@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fazal305.github.io/hr-management-portal/sitemap.xml
