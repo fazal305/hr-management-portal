@@ -333,6 +333,12 @@ body.light-mode .topbar {
   background: var(--card);
   box-shadow: var(--shadow);
 }
+
+.table-panel,
+.form-panel,
+.chart-panel {
+  min-width: 0;
+}
 .panel,
 .form-panel,
 .table-panel,
