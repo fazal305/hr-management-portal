@@ -13,6 +13,8 @@ analytics, settings, and local workspace persistence.
 
 HR Management Portal is a no-build, multi-page frontend application built for portfolio use. It demonstrates enterprise dashboard UI, CRUD workflows, search and filter logic, attendance tracking, leave approvals, payroll previews, and localStorage persistence.
 
+This is a domain adaptation of a shared admin-dashboard shell also used in a [CRM](https://github.com/fazal305/crm-dashboard) and a [CMS admin panel](https://github.com/fazal305/cms-admin-panel); see [school-management-dashboard](https://github.com/fazal305/school-management-dashboard) for the most complete build of that system.
+
 ## Pages
 
 - Dashboard: `index.html`
