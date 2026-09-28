@@ -71,7 +71,11 @@ body.page-leaving .main-shell {
   opacity: 0;
   visibility: hidden;
   background:
-    radial-gradient(circle at center, rgba(34, 211, 238, 0.14), transparent 22rem),
+    radial-gradient(
+      circle at center,
+      rgba(34, 211, 238, 0.14),
+      transparent 22rem
+    ),
     rgba(4, 7, 18, 0.74);
   backdrop-filter: blur(12px);
   transition:
@@ -80,7 +84,11 @@ body.page-leaving .main-shell {
 }
 body.light-mode .page-loader {
   background:
-    radial-gradient(circle at center, rgba(34, 211, 238, 0.16), transparent 22rem),
+    radial-gradient(
+      circle at center,
+      rgba(34, 211, 238, 0.16),
+      transparent 22rem
+    ),
     rgba(248, 251, 255, 0.72);
 }
 body.page-leaving .page-loader,
